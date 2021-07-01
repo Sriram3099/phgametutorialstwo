@@ -1,57 +1,53 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
+
+
     <style>
         body {
-            font-family: 'Lato';
+            font-family: 'lato';
         }
-
         h5 {
             margin: 20px 0px 20px 0px;
-            font-family: 'Lato';
-                          font-weight: bold;
+                            font-family: 'lato';
 
         }
-
         img {
             vertical-align: middle;
-            max-width: 30px;
-            width: 20px;
+            max-width: 30%;
+            width: 30%;
             max-height: 100%;
             margin: 0%;
             padding-right: 2px;
+            float: left;
         }
-
-        
-        
-        .image:hover {
- 
-  box-shadow: 50px blue;
-  transform: translateY(4px);
-  
-}
         button {
             padding: 2px;
             margin: 0.5% 1% 0% 1%;
             width: 48%;
             max-width: 48%;
             height: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             border-radius: 10px;
             border: 2px solid steelblue;
             -webkit-border-radius: 10px;
             background-color: white;
-            font-family: 'Lato';
+              font-family: 'lato';
+
         }
         button:hover {
             -webkit-box-shadow: 100px 600px 500px #ccc;
@@ -66,25 +62,81 @@
         .right {
             float: right;
         }
-        button {
-            padding: 5px;
+        .vertical-center {
+            vertical-align: middle;
         }
+.image:hover {
+ 
+  box-shadow: 50px blue;
+  transform: translateY(4px);
+  
+}
+
+
+
+        
     </style>
 </head>
 <body>
-    
-    <script type="text/javascript" >
+    <script type="text/javascript">
         
-        window.addEventListener('load', (event) => {
+        
+         window.addEventListener('load', (event) => {
+
+                      void function $getLines($) {
+                function countLines($element) {
+                    var lines = 0;
+                    var greatestOffset = void 0;
+                    $element.find('character').each(function () {
+                        if (!greatestOffset || this.offsetTop > greatestOffset) {
+                            greatestOffset = this.offsetTop;
+                            ++lines;
+                        }
+                    });
+                    return lines;
+                }
+                $.fn.getLines = function $getLines() {
+                    var lines = 0;
+                    var clean = this;
+                    var dirty = this.clone();
+                    (function wrapCharacters(fragment) {
+                        var parent = fragment;
+                        $(fragment).contents().each(function () {
+                            if (this.nodeType === Node.ELEMENT_NODE) {
+                                wrapCharacters(this);
+                            }
+                            else if (this.nodeType === Node.TEXT_NODE) {
+                                void function replaceNode(text) {
+                                    var characters = document.createDocumentFragment();
+                                    text.nodeValue.replace(/[\s\S]/gm, function wrapCharacter(character) {
+                                        characters.appendChild($('<character>' + character + '</>')[0]);
+                                    });
+                                    parent.replaceChild(characters, text);
+                                }(this);
+                            }
+                        });
+                    }(dirty[0]));
+                    clean.replaceWith(dirty);
+                    lines = countLines(dirty);
+                    dirty.replaceWith(clean);
+                    return lines;
+                };
+            }(jQuery);
+            $('span').each(function () {
+                console.log($(this).getLines());
+                if($(this).getLines() == 1){
+                    // var parentTag = $( this ).parent().get( 0 ).tagName;
+                    // console.log(parentTag)
+                    $( this ).prev().css( "float", "none" )
+                }
+            })
+
+
+                     
             
             const { title } = Qs.parse(location.search, { ignoreQueryPrefix: true })
         document.getElementById("heading").innerHTML = title 
     })
-        
-
-
-       
-        
         function back() {
             window.parent.postMessage(
                 JSON.stringify({
@@ -257,105 +309,101 @@
 
 
 
-
-         
     </script>
     <div class = "image">
     <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt="" style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;" onclick="back()">
     </div>
-    </br>
-   <b> <h5 id = "heading" >Please choose the voucher redemption tutorial below </h5></b>
+        </br>
+        
+      <h5 id = "heading" style ="font-weight:bold" > Please choose the User ID Guide below.  </h5>
 
 
 
-<button type="button" class="right primary-btn col-xs-11 text-left"  onclick="legends()" >
-        <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder"/>
-        Mobile Legends
-    </button>
-
-
-
-    <button type="button" class="right primary-btn col-xs-11 text-left" onclick="lol()" >
-        <img src="https://cdn.yellowmessenger.com/k75fkGNBKTdc1624594338568.jpg" alt="Place Holder"/>
-        League of Legends: &nbsp &nbsp &nbsp Wild Rift
-    </button>
-
-
-     <button type="button" onclick="tumili()" class="right primary-btn col-xs-11 text-left">
-            <img src="https://cdn.yellowmessenger.com/pssU1tVP7FA31623425956368.jpg" alt="Place Holder" /> 
-              Tumile
-        </button>
-
-        <button type="button" onclick="livu()" class="right primary-btn col-xs-11 text-left">
-            <img src="https://cdn.yellowmessenger.com/NxCqGyW5gC8m1623425519832.png" alt="Place Holder" />
-              LivU 
-         
-        </button>
-
-          <button type="button" onclick="mixu()" class="right primary-btn col-xs-11 text-left">
-            <img src="https://cdn.yellowmessenger.com/gaIjbJpkRDsQ1623425681721.jpg" alt="Place Holder" />  
-             Mixu 
-         
-        </button>
-
-        <button type="button" onclick="turbo()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/8Hc0HGQAk7z81621268850647.png" alt="Place Holder" /> 
-         Turbo VPN
+    <button type="button" onclick="legends()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder" /><span> Mobile Legends</span>
        
     </button>
 
-    <button type="button" onclick="blockman()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/Ous65PrfVcCL1621269349298.png" alt="Place Holder" />
-         Blockman Go
-       
-    </button>
-
-
-    <button type="button" class="right primary-btn col-xs-11 text-left" onclick="harry()" >
-        <img src="https://cdn.yellowmessenger.com/6rS2Ye0YH3f41624595291714.jpg" alt="Place Holder"/>
-        Harry Potter: &nbsp &nbsp &nbsp Puzzles & Spell
-    </button>
-
-    <button type="button" class="right primary-btn col-xs-11 text-left" onclick="cooking()" >
-        <img src="https://cdn.yellowmessenger.com/vbI114LG0Ekt1624601351599.jpg" alt="Place Holder"/>
-        Cooking Battle
-
-    </button> 
-
-    <button type="button" class="right primary-btn col-xs-11 text-left" onclick="hago()" >
-        <img src="https://cdn.yellowmessenger.com/tSn5TdTkJ1tU1624601510085.jpg" alt="Place Holder"/>
-        Hago
-    </button>
-
-    <button type="button" onclick="Zepeto()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/lZE6Ek9w752k1621268517992.png" alt="Place Holder" /> 
-        Zepeto
+    <button type="button" onclick="lol()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/k75fkGNBKTdc1624594338568.jpg" alt="Place Holder" /><span> League of Legends: Wild Rift</span>
         
     </button>
 
-    <button type="button" onclick="rag()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/XATl6jiNXKzw1621270097191.png" alt="Place Holder" />
-         Ragnarok M
+
+
+    <button type="button" onclick="tumili()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/pssU1tVP7FA31623425956368.jpg" alt="Place Holder" /><span>Tumile</span>
+        
+        
+    </button>
+
+
+    <button type="button" onclick="livu()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/NxCqGyW5gC8m1623425519832.png" alt="Place Holder" /><span> LivU</span>
+        
+    </button>
+
+    <button type="button" onclick="mixu()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/gaIjbJpkRDsQ1623425681721.jpg" alt="Place Holder" /><span> Mixu </span>
        
     </button>
 
-    <button type="button" onclick="one()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/3owsfOL0nvk21621268951689.png" alt="Place Holder" /> 
-         One Punch Man
+    <button type="button" onclick="turbo()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/8Hc0HGQAk7z81621268850647.png" alt="Place Holder" /><span> Turbo VPN</span>
+       
+    </button>
+
+   
+
+
+    <button type="button" onclick="blockman()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/Ous65PrfVcCL1621269349298.png" alt="Place Holder" /><span> Blockman Go </span>
+        
+    </button>
+
+    <button type="button" onclick="harry()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/6rS2Ye0YH3f41624595291714.jpg" alt="Place Holder" /><span>  Harry Potter:Puzzles & Spell </span>
+        
+    </button>
+
+    <button type="button" onclick="cooking()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/vbI114LG0Ekt1624601351599.jpg" alt="Place Holder" /><span> Cooking Battle </span>
+       
+    </button>
+
+    <button type="button"  onclick="hago()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/tSn5TdTkJ1tU1624601510085.jpg" alt="Place Holder" /><span> Hago </span>
+        
+    </button>
+
+    <button type="button" onclick="Zepeto()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/lZE6Ek9w752k1621268517992.png" alt="Place Holder" /><span>  Zepeto </span>
+       
+    </button>
+
+    <button type="button" onclick="rag()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/XATl6jiNXKzw1621270097191.png" alt="Place Holder" /><span>  Ragnarok M </span>
        
     </button>
 
     
-    <button type="button" onclick="Runeterra()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/gB9kc7REl9ag1621268687340.png" alt="Place Holder" />
-         Legends Of &nbsp &nbsp &nbsp Runeterra
+    <button type="button" onclick="one()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/3owsfOL0nvk21621268951689.png" alt="Place Holder" /><span>  One Punch Man </span>
        
     </button>
 
-    <button type="button" onclick="tj()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/YRWeklRFAUUP1621269527394.png" alt="Place Holder" /> 
-         Tom & Jerry :Chase
-    </button>
+ <button type="button"  onclick="Runeterra()"  class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/gB9kc7REl9ag1621268687340.png" alt="Place Holder" /> <span>  Legends Of Runeterra </span>
+          
+ </button>
+
+ <button type="button" onclick="tj()"  class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/YRWeklRFAUUP1621269527394.png" alt="Place Holder" /> <span>  Tom & Jerry :Chase </span>
+         
+</button>
+
+
+        
 
     
 </body>
