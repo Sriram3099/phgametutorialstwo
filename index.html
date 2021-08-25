@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
 
@@ -20,11 +21,13 @@
         body {
             font-family: 'lato';
         }
+
         h5 {
             margin: 20px 0px 20px 0px;
-                            font-family: 'lato';
+            font-family: 'lato';
 
         }
+
         img {
             vertical-align: middle;
             max-width: 30%;
@@ -34,6 +37,7 @@
             padding-right: 2px;
             float: left;
         }
+
         button {
             padding: 2px;
             margin: 0.5% 1% 0% 1%;
@@ -46,9 +50,10 @@
             border: 2px solid steelblue;
             -webkit-border-radius: 10px;
             background-color: white;
-              font-family: 'lato';
+            font-family: 'lato';
 
         }
+
         button:hover {
             -webkit-box-shadow: 100px 600px 500px #ccc;
             box-shadow: 2px 6px 5px #ccc;
@@ -56,34 +61,35 @@
             border: 3px solid #385072;
             -moz-border-radius: 10px;
         }
+
         .left {
             float: left;
         }
+
         .right {
             float: right;
         }
+
         .vertical-center {
             vertical-align: middle;
         }
-.image:hover {
- 
-  box-shadow: 50px blue;
-  transform: translateY(4px);
-  
-}
 
+        .image:hover {
 
+            box-shadow: 50px blue;
+            transform: translateY(4px);
 
-        
+        }
     </style>
 </head>
+
 <body>
     <script type="text/javascript">
-        
-        
-         window.addEventListener('load', (event) => {
 
-                      void function $getLines($) {
+
+        window.addEventListener('load', (event) => {
+
+            void function $getLines($) {
                 function countLines($element) {
                     var lines = 0;
                     var greatestOffset = void 0;
@@ -124,19 +130,19 @@
             }(jQuery);
             $('span').each(function () {
                 console.log($(this).getLines());
-                if($(this).getLines() == 1){
+                if ($(this).getLines() == 1) {
                     // var parentTag = $( this ).parent().get( 0 ).tagName;
                     // console.log(parentTag)
-                    $( this ).prev().css( "float", "none" )
+                    $(this).prev().css("float", "none")
                 }
             })
 
 
-                     
-            
+
+
             const { title } = Qs.parse(location.search, { ignoreQueryPrefix: true })
-        document.getElementById("heading").innerHTML = title 
-    })
+            document.getElementById("heading").innerHTML = title
+        })
         function back() {
             window.parent.postMessage(
                 JSON.stringify({
@@ -146,265 +152,108 @@
                 "*"
             );
         }
-
-        function legends() {
+        function telenor() {
             console.log("Redeem Mobile Legends Item Codes")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Where Can I Find My Mobile Legends User ID"
+                    data: "Telenor"
                 }),
                 "*"
             );
 
         }
-
-
-
-        function lol() {
+        function ooredoo() {
             console.log("Redeem Garena Shell Vouchers Call of Duty")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Where Can I Find My League of Legends Wild Rift Riot ID"
+                    data: "Ooredoo"
                 }),
                 "*"
             );
 
         }
-
-         function tumili() {
+        function mpt() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Where Can I Find Tumile ID"
+                    data: "MPT"
                 }),
                 "*"
             );
         }
-        function mixu() {
+        function kbzpay() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Where Can I Find My Mixu ID"
+                    data: "KBZ Pay"
                 }),
                 "*"
             );
         }
-        function livu() {
+        function easypoints() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Where Can I Find a LivU ID"
+                    data: "EasyPoints"
                 }),
                 "*"
             );
         }
-
-        function turbo() {
+        function cardpayment() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Find Turbo VPN ID"
+                    data: "Card Payment"
                 }),
                 "*"
             );
         }
-
-        function blockman() {
+        function onepay() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "find my Blockman Go ID"
+                    data: "OnePay"
                 }),
                 "*"
             );
         }
-
-
-        function harry() {
-            console.log("Cara Redeem Kode Voucher Tinder")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Where Can I Find My Harry Potter Puzzles Spells ID"
-                }),
-                "*"
-            );
-        }
-
-
-            function cooking() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Where Can I Find My Cooking Battle ID"
-                }),
-                "*"
-            );
-        }
-
-        function hago() {
-            console.log("How to Redeem PUBG Mobile Vouchers")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Where Can I Find My Hago ID"
-                }),
-                "*"
-            );
-
-        }
-
-        function Zepeto() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "I want Zepeto code"
-                }),
-                "*"
-            );
-        }
-
-        function rag() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "find my Ragnarok M ID"
-                }),
-                "*"
-            );
-        }
-
-         function one() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "One Punch Man ID"
-                }),
-                "*"
-            );
-        }
-
-        function Runeterra() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Find Riot ID Legends Of Runeterra"
-                }),
-                "*"
-            );
-        }
-        function tj() {
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "I want Tom and Jerry Chase ID"
-                }),
-                "*"
-            );
-        }
-
-
-
-
-
     </script>
-    <div class = "image">
-    <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt="" style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;" onclick="back()">
+    <div class="image">
+        <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt=""
+            style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;"
+            onclick="back()">
     </div>
-        </br>
-        
-      <h5 id = "heading" style ="font-weight:bold" > Please choose the User ID Guide below.  </h5>
-
-
-
-    <button type="button" onclick="legends()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder" /><span> Mobile Legends</span>
-       
+    </br>
+    <h5 id="heading" style="font-weight:bold"> Please choose the User ID Guide below. </h5>
+    <button type="button" onclick="telenor()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/PQiXLFKLM0Xz1629895742710.jpg"
+            alt="Place Holder" /><span>Telenor</span>
     </button>
-
-    <button type="button" onclick="lol()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/k75fkGNBKTdc1624594338568.jpg" alt="Place Holder" /><span>League of Legends: Wild Rift</span>
-        
+    <button type="button" onclick="ooredoo()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/MZUsWVdiJLcm1629895818389.jpg"
+            alt="Place Holder" /><span>Ooredoo</span>
     </button>
-
-
-
-    <button type="button" onclick="tumili()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/pssU1tVP7FA31623425956368.jpg" alt="Place Holder" /><span>Tumile</span>
-        
-        
+    <button type="button" onclick="mpt()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/dVNkJjyZ9bFk1629895853141.jpg" alt="Place Holder" /><span>MPT</span>
     </button>
-
-
-    <button type="button" onclick="livu()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/NxCqGyW5gC8m1623425519832.png" alt="Place Holder" /><span> LivU</span>
-        
+    <button type="button" onclick="kbzpay()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/8W7VfIWy2ds21629895878563.jpg" alt="Place Holder" /><span>KBZ
+            Pay</span>
     </button>
-
-    <button type="button" onclick="mixu()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/gaIjbJpkRDsQ1623425681721.jpg" alt="Place Holder" /><span> Mixu </span>
-       
+    <button type="button" onclick="easypoints()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/u5ISoSVPfYu11629895922801.jpg"
+            alt="Place Holder" /><span>EasyPoints</span>
     </button>
-
-    <button type="button" onclick="turbo()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/8Hc0HGQAk7z81621268850647.png" alt="Place Holder" /><span> Turbo VPN</span>
-       
+    <button type="button" onclick="cardpayment()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/G1icHNvs5daZ1629895949569.jpg" alt="Place Holder" /><span>Card
+            Payment</span>
     </button>
-
-   
-
-
-    <button type="button" onclick="blockman()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/Ous65PrfVcCL1621269349298.png" alt="Place Holder" /><span> Blockman Go </span>
-        
+    <button type="button" onclick="onepay()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/AcOegBXLULDt1629895970775.jpg"
+            alt="Place Holder" /><span>OnePay</span>
     </button>
-
-    <button type="button" onclick="harry()" class="left primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/6rS2Ye0YH3f41624595291714.jpg" alt="Place Holder" /><span>  Harry Potter:Puzzles & Spell </span>
-        
-    </button>
-
-    <button type="button" onclick="cooking()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/vbI114LG0Ekt1624601351599.jpg" alt="Place Holder" /><span> Cooking Battle </span>
-       
-    </button>
-
-    <button type="button"  onclick="hago()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/tSn5TdTkJ1tU1624601510085.jpg" alt="Place Holder" /><span> Hago </span>
-        
-    </button>
-
-    <button type="button" onclick="Zepeto()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/lZE6Ek9w752k1621268517992.png" alt="Place Holder" /><span>  Zepeto </span>
-       
-    </button>
-
-    <button type="button" onclick="rag()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/XATl6jiNXKzw1621270097191.png" alt="Place Holder" /><span>  Ragnarok M </span>
-       
-    </button>
-
-    
-    <button type="button" onclick="one()" class="right primary-btn col-xs-11 text-left">
-        <img src="https://cdn.yellowmessenger.com/3owsfOL0nvk21621268951689.png" alt="Place Holder" /><span>  One Punch Man </span>
-       
-    </button>
-
- <button type="button"  onclick="Runeterra()"  class="right primary-btn col-xs-11 text-left">
-            <img src="https://cdn.yellowmessenger.com/gB9kc7REl9ag1621268687340.png" alt="Place Holder" /> <span>  Legends Of Runeterra </span>
-          
- </button>
-
- <button type="button" onclick="tj()"  class="right primary-btn col-xs-11 text-left">
-            <img src="https://cdn.yellowmessenger.com/YRWeklRFAUUP1621269527394.png" alt="Place Holder" /> <span>  Tom & Jerry :Chase </span>
-         
-</button>
-
-
-        
-
-    
 </body>
+
 </html>
