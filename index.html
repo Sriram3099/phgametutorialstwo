@@ -210,6 +210,15 @@
                 "*"
             );
         }
+function wavepay() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "wavepayနဲ့ ငွေပေးချေမယ်"
+                }),
+                "*"
+            );
+        }
         function onepay() {
             window.parent.postMessage(
                 JSON.stringify({
@@ -249,6 +258,10 @@
     <button type="button" onclick="cardpayment()" class="left primary-btn col-xs-11 text-left">
         <img src="https://cdn.yellowmessenger.com/G1icHNvs5daZ1629895949569.jpg" alt="Place Holder" /><span>Card
             Payment</span>
+    </button>
+ <button type="button" onclick="wavepay()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/sr3CgcWp89k31661498831086.png" alt="Place Holder" /><span>wavepay
+          </span>
     </button>
 <!--     <button type="button" onclick="onepay()" class="right primary-btn col-xs-11 text-left">
         <img src="https://cdn.yellowmessenger.com/AcOegBXLULDt1629895970775.jpg"
